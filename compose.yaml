@@ -1,0 +1,5 @@
+services:
+  ocr:
+    build: .
+    ports:
+      - "7861:7861"
