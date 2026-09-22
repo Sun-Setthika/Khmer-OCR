@@ -7,4 +7,4 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 COPY inference.py vocab.json checkpoint.pth ./
 
 EXPOSE 7861
-CMD ["python", "interface/inference.py"]
+CMD ["python", "inference.py"]
