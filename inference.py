@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-
+import os
 import gradio as gr
 import torch
 import torch.nn as nn
@@ -304,6 +304,6 @@ if __name__ == "__main__":
 
     iface.launch(
         server_name="0.0.0.0",
-        server_port=7861,
+        server_port=int(os.environ.get("PORT", "7861")),
         share=False
     )
