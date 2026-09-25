@@ -9,6 +9,7 @@ on:
 permissions:
   contents: read
   packages: write
+  id-toekens: write
 
 jobs:
   docker-build:
@@ -40,3 +41,18 @@ jobs:
           tags: |
             ghcr.io/sun-setthika/khmer-ocr:latest
             ghcr.io/sun-setthika/khmer-ocr:${{ github.sha }}
+
+      - name: Authenticate to Google Cloud
+        if: github.event_name == 'push'
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Deploy to Cloud Run
+        if: github.event_name == 'push'
+        uses: google-github-actions/deploy-cloudrun@v3
+        with:
+          service: khmer-ocr
+          region: europe-west1
+          image: ghcr.io/sun-setthika/khmer-ocr:${{ github.sha }}

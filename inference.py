@@ -292,7 +292,7 @@ iface = gr.Interface(
 
     outputs="text",
 
-    title="Khmer Optical Character Recognition"
+    title="Khmer Optical Character Recognition (OCR)"
 )
 
 
