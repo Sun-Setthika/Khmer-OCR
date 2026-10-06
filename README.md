@@ -1,6 +1,10 @@
-### Khmer OCR System
-#Demo 
-https://github.com/user-attachments/assets/dc03d872-9a7c-42a6-9a95-5b4dc2f67ef1
+# Khmer OCR System
+A Khmer Optical Character Recognition system built with **PyTesseract**, **OpenCV**, and a **CNN-GRU architecture** for image-based text extraction.
+
+The project includes synthetic Khmer dataset generation using multiple font families, a **Gradio** interface for inference, and automated deployment to **Google Cloud Run** through a **GitHub Actions CI/CD pipeline**.
+
+## Demo
+https://github.com/user-attachments/assets/d8bdb890-3705-4a34-88e2-9d2b9ea53332
 
 
-Developed an OCR system for Khmer text recognition using PyTesseract, OpenCV, and a CNN-GRU architecture, with a Gradio interface for image-based text extraction. Built synthetic Khmer datasets using multiple font families and deployed the application on Google Cloud Run with an automated CI/CD pipeline using GitHub Actions.
+
